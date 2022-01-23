@@ -126,10 +126,10 @@
                         <input class="row w-100" id="date-inspection" name="date-inspection" type="date" placeholder="01/01/2022" required>
                         <select class="form-select row w-100" id="evaluation" name="evaluation" aria-label="Evaluation" required>
                             <option selected>--Evaluation--</option>
-                            <option value=1>Très satisfaisant</option>
-                            <option value=2>Satisfaisant</option>
-                            <option value=3>A améliorer</option>
-                            <option value=4>A corriger de manière urgente</option>
+                            <option value="Très satisfaisant">Très satisfaisant</option>
+                            <option value="Satisfaisant">Satisfaisant</option>
+                            <option value="A améliorer">A améliorer</option>
+                            <option value="A corriger de manière urgente">A corriger de manière urgente</option>
                         </select>
                         <button class="btn btn-dark" id="inspection-btn">Ajouter</button>
                     </form>
@@ -182,15 +182,15 @@
                         </div>
                         <h6 class="text-uppercase text-left mt-3">Satisfaisant</h6>
                         <div class="progress" style="height:35px;">
-                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 30%;"></div>
+                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" id="great" style="width: 30%;"></div>
                         </div>
                         <h6 class="text-uppercase text-left mt-3">A améliorer</h6>
                         <div class="progress" style="height:35px;">
-                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 15%;"></div>
+                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" id="bad" style="width: 15%;"></div>
                         </div>
                         <h6 class="text-uppercase text-left mt-3">A corriger de manière urgente</h6>
                         <div class="progress" style="height:35px;">
-                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 10%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" id="aweful" style="width: 10%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                 </div>
@@ -251,6 +251,9 @@
             var progress_awfl = document.getElementById('aweful');
 
             progress_awsm.style.width = awesome_score+"%";
+            progress_grt.style.width = great_score+"%";
+            progress_bd.style.width = bad_score+"%";
+            progress_awfl.style.width = aweful_score+"%";
 
         </script>
 
